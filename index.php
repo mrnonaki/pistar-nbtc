@@ -3,7 +3,7 @@
 
 <script type="text/javascript">
 function reloadLastHerd(){
-  $("#lastHerd").load("lh.php",function(){ setTimeout(reloadLastHerd,1500) });
+  $("#lastHerd").load("lh.php",function(){ setTimeout(reloadLastHerd,1000) });
 }
 setTimeout(reloadLastHerd,1000);
 $(window).trigger('resize');
