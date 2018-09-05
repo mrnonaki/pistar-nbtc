@@ -3,12 +3,12 @@
 
 <script type="text/javascript">
 function reloadLastHerd(){
-  $("#lastHerd").load("/nbtc/lh.php",function(){ setTimeout(reloadLastHerd,1500) });
+  $("#lastHerd").load("lh.php",function(){ setTimeout(reloadLastHerd,1500) });
 }
 setTimeout(reloadLastHerd,1000);
 $(window).trigger('resize');
 </script>
 
 <div id="lastHerd">
-<?php include '/nbtc/lh.php';?>
+<?php include 'lh.php';?>
 </div>
