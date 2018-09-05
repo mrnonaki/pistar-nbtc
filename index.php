@@ -8,9 +8,9 @@
 		<script type="text/javascript">$.ajaxSetup({ cache: false });</script>
 		<script type="text/javascript">
 			function reloadLastHerd(){
-			  $("#lastHerd").load("lh.php",function(){ setTimeout(reloadLastHerd,1000) });
+			  $("#lastHerd").load("lh.php",function(){ setTimeout(reloadLastHerd,3000) });
 			}
-			setTimeout(reloadLastHerd,1000);
+			setTimeout(reloadLastHerd,3000);
 			$(window).trigger('resize');
 		</script>
 
