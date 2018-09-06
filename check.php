@@ -9,6 +9,7 @@ $callsign = $listElem[2];
 if (file_exists('db/'.$callsign)){
 	include 'lh.php';
 } else {
+	exec('sudo mount -o remount,rw /');
 	$file = fopen('db/'.$callsign, 'w');
 	$txt = file_get_contents("http://apps.nbtc.go.th/callsign/result.php?search=$callsign&ยืนยัน=ยืนยัน");
 	if (strpos($txt, "ไม่พบข้อมูลที่ต้องการค้นหา") !== false) {
@@ -23,6 +24,7 @@ if (file_exists('db/'.$callsign)){
 		fwrite($file, $ltxt);
 	}
 	fclose($file);
+	exec('sudo mount -o remount,ro /');
 	include 'lh.php';
 }
 ?>
