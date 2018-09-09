@@ -9,7 +9,9 @@ $listElem = $lastHeard[0];
 $callsign = $listElem[2];
 $device = $listElem[3];
 
-if (strpos($file, "error") !== false) {
+if ($callsign === "DAPNET") {
+	echo "DAPNET Pager System";
+} else if (strpos($file, "error") !== false) {
 	echo "ไม่พบข้อมูลที่ต้องการค้นหา";
 } else {
 	
@@ -20,12 +22,16 @@ if (strpos($file, "error") !== false) {
 	$location = $array[3];
 	$exp = $array[6];
 	$expin = ($exp - time()) / 86400;
+	$srcpic = $array[7];
 	
 	echo "Callsign: " . $callsign . " /" . $device . "<br>";
 	echo "Name: " . $fname . " " . $lname . "<br>";
 	echo "Type: " . $type . "<br>";
 	echo "Location: " . $location . "<br>";
 	echo "Expires: " . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)<br>";
-	echo "<img " . $array[7] . "><br>";
+	
+	if (isset($srcpic)) {
+		echo "<img " . $srcpic . "><br>";
+	}
 }
 ?>
