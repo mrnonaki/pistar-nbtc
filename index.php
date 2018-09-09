@@ -13,7 +13,6 @@
 			setTimeout(reloadLastHerd,1000);
 			$(window).trigger('resize');
 		</script>
-
 		<div id="lastHerd">
 		<?php include 'check.php';?>
 		</div>

@@ -12,6 +12,7 @@ $device = $listElem[3];
 if (strpos($file, "error") !== false) {
 	echo "ไม่พบข้อมูลที่ต้องการค้นหา";
 } else {
+	
 	$array = (explode(' ',$file));
 	$fname = $array[0];
 	$lname = $array[1];
@@ -25,5 +26,6 @@ if (strpos($file, "error") !== false) {
 	echo "Type: " . $type . "<br>";
 	echo "Location: " . $location . "<br>";
 	echo "Expires: " . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)<br>";
+	echo "<img " . $array[7] . "><br>";
 }
 ?>
