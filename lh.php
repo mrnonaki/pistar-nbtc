@@ -30,7 +30,7 @@ if ($callsign === "DAPNET") {
 	echo "Location: " . $location . "<br>";
 	echo "Expires: " . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)<br>";
 	
-	if (isset($srcpic)) {
+	if (strlen($srcpic) !== 0) {
 		echo "<img " . $srcpic . "><br>";
 	}
 }
