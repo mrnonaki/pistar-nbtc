@@ -24,14 +24,16 @@ if ($callsign === "DAPNET") {
 	$expin = ($exp - time()) / 86400;
 	$srcpic = $array[7];
 	
-	echo "Callsign: " . $callsign . " /" . $device . "<br>";
-	echo "Name: " . $fname . " " . $lname . "<br>";
-	echo "Type: " . $type . "<br>";
-	echo "Location: " . $location . "<br>";
-	echo "Expires: " . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)<br>";
+	echo '<table style="width:500px">';
+	echo "<tr><td>Callsign:</td><td>" . $callsign . " /" . $device . "</td></tr>";
+	echo "<tr><td>Name:</td><td>" . $fname . " " . $lname . "</td></tr>";
+	echo "<tr><td>Type:</td><td>" . $type . "</td></tr>";
+	echo "<tr><td>Location:</td><td>" . $location . "</td></tr>";
+	echo "<tr><td>Expires:</td><td>" . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)</td></tr>";
+	echo '</table>';
 	
 	if (strlen($srcpic) !== 0) {
-		echo "<img " . $srcpic . "><br>";
+		echo "<img width=300 src=" . $srcpic . ">";
 	}
 }
 ?>

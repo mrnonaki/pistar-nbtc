@@ -13,7 +13,7 @@ if (file_exists('db/'.$callsign)){
 	exec('sudo mount -o remount,rw /');
 	$file = fopen('db/'.$callsign, 'w');
 	$txt = file_get_contents("http://apps.nbtc.go.th/callsign/result.php?search=$callsign&ยืนยัน=ยืนยัน");
-	$pic = file_get_contents("https://www.qrz.com/pictures/search/$callsign");
+	$pic = file_get_contents("https://www.qrz.com/db/$callsign");
 	
 	if (strpos($txt, "ไม่พบข้อมูลที่ต้องการค้นหา") !== false) {
 		fwrite($file, "error");
@@ -25,13 +25,14 @@ if (file_exists('db/'.$callsign)){
 		$txt = substr($txt, 0, $postxt);
 		$arraytxt = (explode(' ',$txt));
 		
-		$pospic = strpos($pic, '<li class="pageContent pageID1" page="1" id="pageContent1">');
+		$pospic = strpos($pic, 'ppic');
 		$pic = substr($pic, $pospic);
-		$pospic = strpos($pic, '<div style="clear:both; float:none; width: 100%; height: 0px;"></div>');
+		$pospic = strpos($pic, 'mypic');
 		$pic = substr($pic, 0, $pospic);
 		$arraypic = (explode(' ',$pic));
+		$pic = substr($arraypic[10], 5, -1);
 		
-		$ltxt = $arraytxt[97] . " " . $arraytxt[98] . " " . $arraytxt[112] ." " . $arraytxt[182] . " " . $arraytxt[20] . " " . strtotime($arraytxt[124] . $arraytxt[125] . $arraytxt[126]) . " " . strtotime($arraytxt[141] . $arraytxt[142] . $arraytxt[143]) . " " . $arraypic[477];
+		$ltxt = $arraytxt[97] . " " . $arraytxt[98] . " " . $arraytxt[112] ." " . $arraytxt[182] . " " . $arraytxt[20] . " " . strtotime($arraytxt[124] . $arraytxt[125] . $arraytxt[126]) . " " . strtotime($arraytxt[141] . $arraytxt[142] . $arraytxt[143]) . " " . $pic;
 		fwrite($file, $ltxt);
 	}
 	fclose($file);

@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<script type="text/javascript" src="/jquery.min.js"></script>
-		<script type="text/javascript">$.ajaxSetup({ cache: false });</script>
+		<script type="text/javascript">$.ajaxSetup({ cache: true });</script>
 		<script type="text/javascript">
 			function reloadLastHerd(){
 			  $("#lastHerd").load("check.php",function(){ setTimeout(reloadLastHerd,1000) });
