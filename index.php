@@ -13,8 +13,14 @@
 			setTimeout(reloadLastHerd,1000);
 			$(window).trigger('resize');
 		</script>
+		<style>
+			td {vertical-align: top;
+			text-align: left;
+			}
+		</style>
 		<div id="lastHerd">
-		<?php include 'check.php';?>
+<?php include 'check.php';?>
 		</div>
+		<iframe src="link.php"></iframe>
 	</body>
 </html>
