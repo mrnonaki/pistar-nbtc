@@ -8,19 +8,27 @@
 		<script type="text/javascript">$.ajaxSetup({ cache: true });</script>
 		<script type="text/javascript">
 			function reloadLastHerd(){
-			  $("#lastHerd").load("check.php",function(){ setTimeout(reloadLastHerd,1000) });
+			  $("#lastHerd").load("check.php",function(){ setTimeout(reloadLastHerd,2000) });
 			}
-			setTimeout(reloadLastHerd,1000);
+			setTimeout(reloadLastHerd,2000);
+			function reloadstatus(){
+			  $("#status").load("status.php",function(){ setTimeout(reloadstatus,3000) });
+			}
+			setTimeout(reloadstatus,3000);
 			$(window).trigger('resize');
 		</script>
 		<style>
-			td {vertical-align: top;
-			text-align: left;
+			td {
+				text-align:center;
+				vertical-align:top;
 			}
 		</style>
 		<div id="lastHerd">
 <?php include 'check.php';?>
 		</div>
-		<iframe src="link.php"></iframe>
+		<div id="status">
+<?php include 'status.php';?>
+		</div>
+		<iframe src="link.php" style="width:600px;border:none;"></iframe>
 	</body>
 </html>

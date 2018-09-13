@@ -24,19 +24,19 @@ if ($callsign === "DAPNET") {
 	$expin = ($exp - time()) / 86400;
 	$srcpic = $array[7];
 	
-	echo "<table><tr><td><table>\n";
-	echo "\t<tr><td>Callsign:</td><td>" . $callsign . " /" . $device . "</td></tr>\n";
-	echo "\t<tr><td>Name:</td><td>" . $fname . " " . $lname . "</td></tr>\n";
-	echo "\t<tr><td>Type:</td><td>" . $type . "</td></tr>\n";
-	echo "\t<tr><td>Location:</td><td>" . $location . "</td></tr>\n";
-	echo "\t<tr><td>Expires:</td><td>" . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)</td></tr>\n";
+	echo "<table><tr><td><table style=\"width:300px;height:150px;\">\n";
+	echo "\t<tr><td style=\"text-align:center;\">" . $callsign . " /" . $device . "</td></tr>\n";
+	echo "\t<tr><td style=\"text-align:center;\">" . $fname . " " . $lname . "</td></tr>\n";
+	echo "\t<tr><td style=\"text-align:center;\">" . $location . "</td></tr>\n";
+	echo "\t<tr><td style=\"text-align:center;\">" . $type . "</td></tr>\n";
+	echo "\t<tr><td style=\"text-align:center;\">" . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)</td></tr>\n";
 	echo "</table></td>\n";
 	
 	if (strlen($srcpic) !== 0) {
-		echo "<td><img height=120 src=" . $srcpic . "></td></tr>\n";
+		echo "<td><img height=150px src=" . $srcpic . "></td></tr>\n";
 	}
 	
-	echo "<tr><td><table>\n";
+	echo "<tr><td><table style=\"width:300px;\">\n";
 	for ($i = 0;  ($i <= 9); $i++) {
 		if (isset($lastHeard[$i])) {
 			$listElem = $lastHeard[$i];
@@ -49,9 +49,9 @@ if ($callsign === "DAPNET") {
 				$local_time = $dt->format('H:i:s');
 				
 				echo"\t<tr>";
-				echo"<td align=\"left\">$local_time</td>";
+				echo"<td>$local_time</td>";
 				if (is_numeric($listElem[2]) || $listElem[2] == "DAPNET") {
-					echo "<td align=\"left\">$listElem[2]</td>";
+					echo "<td>$listElem[2]</td>";
 				} else if (floatval($listElem[7]) <= 1) {
 					echo "<td style=\"background:#1d1;\">$listElem[2]/$listElem[3]</td>";
 				} else if (floatval($listElem[7]) > 1 && floatval($listElem[7]) <= 3) {
@@ -67,7 +67,7 @@ if ($callsign === "DAPNET") {
 				echo"</tr>\n";
 				if ($i == 4) {
 					echo "</table></td>\n";
-					echo "<td><table>\n";
+					echo "<td><table style=\"width:300px;\">\n";
 				}
 			}
 		}
