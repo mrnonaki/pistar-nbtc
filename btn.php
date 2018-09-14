@@ -16,6 +16,14 @@ if ($configdstarfile = fopen('/etc/dstarrepeater','r')) {
 	}
 }
 
+if (isset($_POST['power'])) {
+	if (($_POST['power']) == "Reboot" ) {
+	exec ('sleep 5 && sudo shutdown -r now > /dev/null &');
+	} else if (($_POST['power']) == "Power" ) {
+		exec ('sleep 5 && sudo shutdown -h now > /dev/null &');
+	}
+}
+
 if (isset($_POST['linkto'])) {
 	$module = $configdstar['callsign'];
 	$linkto = $_POST['linkto'];
@@ -30,5 +38,8 @@ echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"REF087 C\"></td>\n";
 echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"REF087 D\"></td>\n";
 echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"REF087 E\"></td>\n";
 echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"DCS001 U\"></td>\n";
+echo "</tr><tr><td></td><td></td>\n";
+echo "\t<td style=\"text-align:right\"><input name=\"power\" type=\"submit\" value=\"Reboot\"></td>\n";
+echo "\t<td><input name=\"power\" type=\"submit\" value=\"Power\"></td>\n";
 echo "</tr></table></form>\n";
 ?>

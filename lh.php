@@ -25,15 +25,15 @@ if ($callsign === "DAPNET") {
 	$srcpic = $array[7];
 	
 	echo "<table><tr><td><table style=\"width:300px;height:150px;\">\n";
-	echo "\t<tr><td style=\"text-align:center;\">" . $callsign . " /" . $device . "</td></tr>\n";
-	echo "\t<tr><td style=\"text-align:center;\">" . $fname . " " . $lname . "</td></tr>\n";
-	echo "\t<tr><td style=\"text-align:center;\">" . $location . "</td></tr>\n";
-	echo "\t<tr><td style=\"text-align:center;\">" . $type . "</td></tr>\n";
-	echo "\t<tr><td style=\"text-align:center;\">" . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)</td></tr>\n";
+	echo "\t<tr><td>" . $callsign . " /" . $device . "</td></tr>\n";
+	echo "\t<tr><td>" . $fname . " " . $lname . "</td></tr>\n";
+	echo "\t<tr><td>" . $location . "</td></tr>\n";
+	echo "\t<tr><td>" . $type . "</td></tr>\n";
+	echo "\t<tr><td>" . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)</td></tr>\n";
 	echo "</table></td>\n";
 	
 	if (strlen($srcpic) !== 0) {
-		echo "<td><img height=150px src=" . $srcpic . "></td></tr>\n";
+		echo "<td width=\"300px\"><img height=150px src=" . $srcpic . "></td></tr>\n";
 	}
 	
 	echo "<tr><td><table style=\"width:300px;\">\n";
