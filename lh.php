@@ -25,7 +25,7 @@ if ($callsign === "DAPNET") {
 	$srcpic = $array[7];
 	
 	echo "<table><tr><td><table style=\"width:300px;height:150px;\">\n";
-	echo "\t<tr><td><h2>" . $callsign . " /" . $device . "</h2></td></tr>\n";
+	echo "\t<tr><td><font size=\"6\">" . $callsign . " /" . $device . "</font></td></tr>\n";
 	echo "\t<tr><td>" . $fname . " " . $lname . "</td></tr>\n";
 	echo "\t<tr><td>" . $location . "</td></tr>\n";
 	echo "\t<tr><td>" . $type . "</td></tr>\n";
