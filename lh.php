@@ -25,7 +25,7 @@ if ($callsign === "DAPNET") {
 	$srcpic = $array[7];
 	
 	echo "<table><tr><td><table style=\"width:300px;height:150px;\">\n";
-	echo "\t<tr><td>" . $callsign . " /" . $device . "</td></tr>\n";
+	echo "\t<tr><td><h2>" . $callsign . " /" . $device . "</h2></td></tr>\n";
 	echo "\t<tr><td>" . $fname . " " . $lname . "</td></tr>\n";
 	echo "\t<tr><td>" . $location . "</td></tr>\n";
 	echo "\t<tr><td>" . $type . "</td></tr>\n";
@@ -53,11 +53,11 @@ if ($callsign === "DAPNET") {
 				if (is_numeric($listElem[2]) || $listElem[2] == "DAPNET") {
 					echo "<td>$listElem[2]</td>";
 				} else if (floatval($listElem[7]) <= 1) {
-					echo "<td style=\"background:#1d1;\">$listElem[2]/$listElem[3]</td>";
+					echo "<td style=\"background:#1d1;\">$listElem[2] /$listElem[3]</td>";
 				} else if (floatval($listElem[7]) > 1 && floatval($listElem[7]) <= 3) {
-					echo "<td style=\"background:#fa0;\">$listElem[2]/$listElem[3]</td>";
+					echo "<td style=\"background:#fa0;\">$listElem[2] /$listElem[3]</td>";
 				} else {
-					echo "<td style=\"background:#f33;\">$listElem[2]/$listElem[3]</td>";
+					echo "<td style=\"background:#f33;\">$listElem[2] /$listElem[3]</td>";
 				}
 				if ($listElem[6] == null) {
 					echo "<td style=\"background:#f33;\">TX</td>";
