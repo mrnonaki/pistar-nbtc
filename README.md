@@ -1,5 +1,5 @@
 # pistar-nbtc
-### install
+### Install
 ```sh
 rpi-rw
 sudo su
@@ -13,19 +13,19 @@ rpi-ro
 rpi-rw
 sudo su
 echo -e "REF087\tref087.dstargateway.org\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DA\te24da.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DB\te24db.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DC\te24dc.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DD\te24dd.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DE\te24de.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DF\te24df.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DG\te24dg.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DH\te24dh.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DI\te24di.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DJ\te24dj.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
-echo -e "E24DK\te24dk.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
+echo -e "E24DA\te24da.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DB\te24db.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DC\te24dc.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DD\te24dd.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DE\te24de.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DF\te24df.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DG\te24dg.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DH\te24dh.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DI\te24di.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DJ\te24dj.dynu.com\tL\n" > /root/DPlus_Hosts.txt
+echo -e "E24DK\te24dk.dynu.com\tL\n" > /root/DPlus_Hosts.txt
 rpi-ro
 sudo reboot
 ```
-### access page
+### Access Page
 - http://pistar-ip/pistar-nbtc
