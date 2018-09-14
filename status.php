@@ -2,6 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/tools.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/functions.php';
+include_once 'wifi.php';
 
 $configdstar = array();
 if ($configdstarfile = fopen('/etc/dstarrepeater','r')) {
@@ -97,7 +98,7 @@ else {
 	echo "<td></td>";
 }
 echo "\n";
-echo "\t<td style=\"background:#0b0; color:#030;\">".str_replace(' ', '&nbsp;', $configdstar['callsign'])."</td>\n";
+echo "\t<td style=\"background:#0b0; color:#030;\">$strSSID / $strIPAddress / $strSignalLevel</td>\n";
 echo "</tr><tr>\n\t";
 echo $cpuTempHTML;
 echo "\t";
