@@ -12,7 +12,7 @@ rpi-ro
 ```sh
 rpi-rw
 sudo su
-echo -e "\nREF087\tref087.dstargateway.org\tL" >> /root/DPlus_Hosts.txt
+echo -e "REF087\tref087.dstargateway.org\tL" >> /root/DPlus_Hosts.txt
 echo -e "E24DA\te24da.dynu.com\tL" >> /root/DPlus_Hosts.txt
 echo -e "E24DB\te24db.dynu.com\tL" >> /root/DPlus_Hosts.txt
 echo -e "E24DC\te24dc.dynu.com\tL" >> /root/DPlus_Hosts.txt
@@ -23,7 +23,7 @@ echo -e "E24DG\te24dg.dynu.com\tL" >> /root/DPlus_Hosts.txt
 echo -e "E24DH\te24dh.dynu.com\tL" >> /root/DPlus_Hosts.txt
 echo -e "E24DI\te24di.dynu.com\tL" >> /root/DPlus_Hosts.txt
 echo -e "E24DJ\te24dj.dynu.com\tL" >> /root/DPlus_Hosts.txt
-echo -e "E24DK\te24dk.dynu.com\tL\n" >> /root/DPlus_Hosts.txt
+echo -e "E24DK\te24dk.dynu.com\tL" >> /root/DPlus_Hosts.txt
 rpi-ro
 sudo reboot
 ```
