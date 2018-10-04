@@ -29,7 +29,8 @@
 		<div id="status">
 <?php include 'status.php';?>
 		</div>
-		<iframe src="btn.php" style="width:800px;border:none;"></iframe>
-		Made with LOVE by E24YUJ
+		<iframe src="btn.php" style="width:800px;border:none;"></iframe><br>
+		Made with LOVE by <a href="https://fb.com/mrnonaki" target="_blank">E24YUJ</a><br>
+		
 	</body>
 </html>
