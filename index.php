@@ -30,6 +30,6 @@
 <?php include 'status.php';?>
 		</div>
 		<iframe src="btn.php" style="width:800px;border:none;"></iframe>
-		Made with LOVE by <a href="https://facebook.com/mrnonaki" target="_blank">E24YUJ</a>
+		Made with LOVE by E24YUJ
 	</body>
 </html>
