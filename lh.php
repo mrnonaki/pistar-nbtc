@@ -24,7 +24,7 @@ if ($callsign === "DAPNET") {
 	$expin = ($exp - time()) / 86400;
 	$srcpic = $array[7];
 	
-	echo "<table><tr><td><table style=\"width:400px;height:200px;\">\n";
+	echo "<table><tr><td><table style=\"width:400px;height:150px;\">\n";
 	echo "\t<tr><td><font size=\"6\">" . $callsign . " /" . $device . "</font></td></tr>\n";
 	echo "\t<tr><td>" . $fname . " " . $lname . "</td></tr>\n";
 	echo "\t<tr><td>" . $location . "</td></tr>\n";
@@ -33,7 +33,7 @@ if ($callsign === "DAPNET") {
 	echo "</table></td>\n";
 	
 	if (strlen($srcpic) !== 0) {
-		echo "<td width=\"400px\"><img height=200px src=" . $srcpic . "></td></tr>\n";
+		echo "<td width=\"400px\"><img height=150px src=" . $srcpic . "></td></tr>\n";
 	}
 	
 	echo "<tr><td><table style=\"width:400px;\">\n";
