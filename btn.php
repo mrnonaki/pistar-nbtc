@@ -45,7 +45,7 @@ echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"E24DC  C\"></td>\n";
 echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"E24DD  C\"></td>\n";
 echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"E24DE  C\"></td>\n";
 echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"E24DF  C\"></td>\n";
-echo "</tr><tr>\n";
+#echo "</tr><tr>\n";
 echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"E24DG  C\"></td>\n";
 echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"E24DH  C\"></td>\n";
 echo "\t<td><input name=\"linkto\" type=\"submit\" value=\"E24DI  C\"></td>\n";
