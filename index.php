@@ -29,6 +29,6 @@
 		<div id="status">
 <?php include 'status.php';?>
 		</div>
-		<iframe src="btn.php" style="width:600px;border:none;"></iframe>
+		<iframe src="btn.php" style="width:800px;border:none;"></iframe>
 	</body>
 </html>
