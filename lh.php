@@ -37,7 +37,7 @@ if ($callsign === "DAPNET") {
 	}
 	
 	echo "<tr><td><table style=\"width:400px;\">\n";
-	for ($i = 0;  ($i <= 9); $i++) {
+	for ($i = 0;  ($i <= 5); $i++) {
 		if (isset($lastHeard[$i])) {
 			$listElem = $lastHeard[$i];
 			if ($listElem[2]) {
@@ -65,7 +65,7 @@ if ($callsign === "DAPNET") {
 					echo "<td>$listElem[6]sec</td>";
 				}
 				echo"</tr>\n";
-				if ($i == 4) {
+				if ($i == 2) {
 					echo "</table></td>\n";
 					echo "<td><table style=\"width:400px;\">\n";
 				}
