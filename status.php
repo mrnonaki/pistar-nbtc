@@ -42,7 +42,7 @@ if ($cpuTempC >= 69) {
 	$cpuTempHTML = "<td style=\"background: #f00\">".$cpuTempC."&deg;C</td>\n";
 }
 
-echo "<table style=\"width:800px\"><tr>\n\t";
+echo "<table style=\"width:780px\"><tr>\n\t";
 
 if (isset($lastHeard[0])) {
 	$listElem = $lastHeard[0];

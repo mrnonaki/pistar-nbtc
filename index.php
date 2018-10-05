@@ -30,7 +30,7 @@
 <?php include 'status.php';?>
 		</div>
 		Made with LOVE by E24YUJ<br>
-		<iframe src="btn.php" style="width:800px;border:none;"></iframe><br>
+		<iframe src="btn.php" style="width:780px;height:50px;border:none;"></iframe><br>
 		
 	</body>
 </html>
