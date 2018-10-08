@@ -1,7 +1,4 @@
 <?php
-include('wifi/phpincs.php');
-$output = $return = 0;
-
 $strIPAddress = NULL;
 $strNetMask = NULL;
 $strRxPackets = NULL;

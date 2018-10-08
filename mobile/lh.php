@@ -72,10 +72,6 @@ if (strlen($array[7]) !== 0){
 					echo "<td>$listElem[6]sec</td>";
 				}
 				echo"</tr>\n";
-				// if ($i == 4) {
-					// echo "</table></td>\n";
-					// echo "<td><table class=\"table table-sm table-borderless table-striped text-center\">\n";
-				// }
 			}
 		}
 	}
