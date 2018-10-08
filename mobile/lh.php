@@ -22,7 +22,7 @@ if ($array[0] !== "error"){
 if (strlen($array[7]) !== 0){
 	$srcpic = $array[7];
 }else {
-	$srcpic = "icon/dtdxa.png";
+	$srcpic = "../icon/dtdxa.png";
 }
 ?>
 
