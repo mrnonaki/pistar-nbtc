@@ -2,43 +2,50 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/tools.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/functions.php';
-include_once 'check.php';
+include_once '../check.php';
 date_default_timezone_set('Asia/Bangkok');
 
 $listElem = $lastHeard[0];
 $callsign = $listElem[2];
 $device = $listElem[3];
-$file = file_get_contents('db/'.$callsign);
 
-if ($callsign === "DAPNET") {
-	echo "DAPNET Pager System";
-} else if (strpos($file, "error") !== false) {
-	echo "ไม่พบข้อมูลที่ต้องการค้นหา";
-} else {
-	
-	$array = (explode(' ',$file));
+$file = file_get_contents('../db/'.$callsign);
+$array = (explode(' ',$file));
+if ($array[0] !== "error"){
 	$fname = $array[0];
 	$lname = $array[1];
-	$type = $array[2];
+	$type = substr($array[2], 24);
 	$location = $array[3];
 	$exp = $array[6];
 	$expin = ($exp - time()) / 86400;
+}
+if (strlen($array[7]) !== 0){
 	$srcpic = $array[7];
-	
-	echo "<table><tr><td><table style=\"width:390px;height:150px;\">\n";
-	echo "\t<tr><td><font size=\"6\">" . $callsign . " /" . $device . "</font></td></tr>\n";
-	echo "\t<tr><td>" . $fname . " " . $lname . "</td></tr>\n";
-	echo "\t<tr><td>" . $location . "</td></tr>\n";
-	echo "\t<tr><td>" . $type . "</td></tr>\n";
-	echo "\t<tr><td>" . date('d M Y', $exp) . " (" . round($expin, 0, PHP_ROUND_HALF_DOWN) . " days left)</td></tr>\n";
-	echo "</table></td>\n";
-	
-	if (strlen($srcpic) !== 0) {
-		echo "<td width=\"390px\"><img height=150px src=" . $srcpic . "></td></tr>\n";
-	}
-	
-	echo "<tr><td><table style=\"width:390px;\">\n";
-	for ($i = 0;  ($i <= 5); $i++) {
+}else {
+	$srcpic = "icon/dtdxa.png";
+}
+?>
+
+<div class="table-responsive-md">
+	<table class="table table-sm table-borderless text-center">
+		<tr>
+		<td colspan="2"><h3><?php echo $callsign." /".$device;?></h3></td>
+		</tr><tr>
+		<td><?php echo $fname." ".$lname;?></td>
+		<td rowspan="4"><img style="max-width:120px;max-height:120px;" src=<?php echo $srcpic;?>></td>
+		</tr><tr>
+		<td><?php echo $location;?></td>
+		</tr><tr>
+		<td><?php echo $type;?></td>
+		</tr><tr>
+		<td><?php if ($exp) echo date('d M Y', $exp)." | ".round($expin, 0, PHP_ROUND_HALF_DOWN)." days left"?></td>
+		</tr>
+	</table>
+
+<?
+		echo "<table class=\"table table-sm table-borderless text-center\">\n";
+		echo "<tr><td><table class=\"table table-sm table-borderless table-striped text-center\">\n";
+		for ($i = 0;  ($i < 5); $i++) {
 		if (isset($lastHeard[$i])) {
 			$listElem = $lastHeard[$i];
 			if ($listElem[2]) {
@@ -49,8 +56,7 @@ if ($callsign === "DAPNET") {
 				$dt->setTimeZone($local_tz);
 				$local_time = $dt->format('H:i:s');
 				
-				echo"\t<tr>";
-				echo"<td>$local_time</td>";
+				echo"<tr><td>$local_time</td>";
 				if (is_numeric($listElem[2]) || $listElem[2] == "DAPNET") {
 					echo "<td>$listElem[2]</td>";
 				} else if (floatval($listElem[7]) <= 1) {
@@ -66,13 +72,13 @@ if ($callsign === "DAPNET") {
 					echo "<td>$listElem[6]sec</td>";
 				}
 				echo"</tr>\n";
-				if ($i == 2) {
-					echo "</table></td>\n";
-					echo "<td><table style=\"width:390px;\">\n";
-				}
+				// if ($i == 4) {
+					// echo "</table></td>\n";
+					// echo "<td><table class=\"table table-sm table-borderless table-striped text-center\">\n";
+				// }
 			}
 		}
 	}
-	echo "</td></table></tr></table>\n";
-}
+	echo "</table></td></tr></table>\n";
 ?>
+</div>

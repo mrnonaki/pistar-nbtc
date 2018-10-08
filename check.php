@@ -2,20 +2,22 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/tools.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/functions.php';
+date_default_timezone_set('Asia/Bangkok');
 
 $listElem = $lastHeard[0];
 $callsign = $listElem[2];
 
-if (file_exists('db/'.$callsign)){
-	include 'lh.php';
-} else {
-	
+if ((time() - filemtime('db/'.$callsign)) / 86400 > 7){
+	unlink('db/'.$callsign);
+}
+
+if (!file_exists('db/'.$callsign)){
 	exec('sudo mount -o remount,rw /');
 	$file = fopen('db/'.$callsign, 'w');
 	$txt = file_get_contents("http://apps.nbtc.go.th/callsign/result.php?search=$callsign&ยืนยัน=ยืนยัน");
 	$pic = file_get_contents("https://www.qrz.com/db/$callsign");
 	
-	if (strpos($txt, "ไม่พบข้อมูลที่ต้องการค้นหา") !== false) {
+	if (strpos($txt, "ไม่พบข้อมูลที่ต้องการค้นหา") !== false || strlen($callsign) < 6) {
 		fwrite($file, "error");
 	} else {
 		
@@ -37,6 +39,5 @@ if (file_exists('db/'.$callsign)){
 	}
 	fclose($file);
 	exec('sudo mount -o remount,ro /');
-	include 'lh.php';
 }
 ?>

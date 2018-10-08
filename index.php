@@ -8,7 +8,7 @@
 		<script type="text/javascript">$.ajaxSetup({ cache: true });</script>
 		<script type="text/javascript">
 			function reloadLastHerd(){
-			  $("#lastHerd").load("check.php",function(){ setTimeout(reloadLastHerd,2000) });
+			  $("#lastHerd").load("lh.php",function(){ setTimeout(reloadLastHerd,2000) });
 			}
 			setTimeout(reloadLastHerd,2000);
 			function reloadstatus(){
@@ -24,7 +24,7 @@
 			}
 		</style>
 		<div id="lastHerd">
-<?php include 'check.php';?>
+<?php include 'lh.php';?>
 		</div>
 		<div id="status">
 <?php include 'status.php';?>
