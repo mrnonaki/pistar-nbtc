@@ -5,6 +5,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/functions.php';
 date_default_timezone_set('Asia/Bangkok');
 
 $db = $_SERVER['DOCUMENT_ROOT'].'/pistar-nbtc/db/';
+if (!file_exists($db)) {
+    mkdir($db, 0755, true);
+}
 
 $listElem = $lastHeard[0];
 $callsign = $listElem[2];
