@@ -14,7 +14,7 @@ if ($dapnetLog = fopen(MMDVMLOGPATH.'/DAPNETGateway-'.date('Y-m-d').'.log','r'))
 			$dapnetMSG	= $linx[2][0];
 			if ( time() - strtotime($local_time) < 3600) {
 				echo "<div class=\"alert alert-success alert-dismissible text-left\">";
-				echo "<strong>DAPNET</strong> $local_time ... $dapnetMSG";
+				echo "DAPNET ($local_time) ... $dapnetMSG";
 				echo "</div>";
 			}
 		}
