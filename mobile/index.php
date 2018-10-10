@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-	<title>pistar-nbtc</title>
+	<title>pistar-nbtc by E24YUJ</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script type="text/javascript">$.ajaxSetup({ cache: true });</script>
 	<script type="text/javascript">
 		function reloaddapnet(){
 			$("#dapnet").load("dapnet.php",function(){ setTimeout(reloaddapnet,10000) });
@@ -45,5 +46,10 @@
 </a>
 </nav>
 </div>
+<footer class="text-center">
+<div class="text-center">
+Made with ❤ by E24YUJ
+</div>
+</footer>
 </body>
 </html>
