@@ -2,13 +2,19 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/tools.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/functions.php';
-include_once 'check.php';
 date_default_timezone_set('Asia/Bangkok');
+
+$db = $_SERVER['DOCUMENT_ROOT'].'/pistar-nbtc/db/';
 
 $listElem = $lastHeard[0];
 $callsign = $listElem[2];
 $device = $listElem[3];
-$file = file_get_contents('db/'.$callsign);
+
+if (file_exists($db.$callsign) && (time() - filemtime($db.$callsign)) / 86400 < 7) {
+	$file = file_get_contents($db.$callsign);
+}else if (strlen($callsign) == 6) {
+	include_once 'check.php';
+}
 
 if ($callsign === "DAPNET") {
 	echo "DAPNET Pager System";

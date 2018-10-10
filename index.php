@@ -24,10 +24,10 @@
 			}
 		</style>
 		<div id="lastHerd">
-<?php include 'lh.php';?>
+<?php include_once 'lh.php';?>
 		</div>
 		<div id="status">
-<?php include 'status.php';?>
+<?php include_once 'status.php';?>
 		</div>
 		Made with LOVE by E24YUJ<br>
 		<iframe src="btn.php" style="width:780px;height:60px;border:none;"></iframe><br>

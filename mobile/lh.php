@@ -2,27 +2,32 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/tools.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/mmdvmhost/functions.php';
-include_once '../check.php';
 date_default_timezone_set('Asia/Bangkok');
+
+$db = $_SERVER['DOCUMENT_ROOT'].'/pistar-nbtc/db/';
 
 $listElem = $lastHeard[0];
 $callsign = $listElem[2];
 $device = $listElem[3];
 
-$file = file_get_contents('../db/'.$callsign);
-$array = (explode(' ',$file));
-if ($array[0] !== "error"){
-	$fname = $array[0];
-	$lname = $array[1];
-	$type = substr($array[2], 24);
-	$location = $array[3];
-	$exp = $array[6];
-	$expin = ($exp - time()) / 86400;
-}
-if (strlen($array[7]) !== 0){
-	$srcpic = $array[7];
-}else {
-	$srcpic = "../icon/dtdxa.png";
+if (file_exists($db.$callsign) && (time() - filemtime($db.$callsign)) / 86400 < 7) {
+	$file = file_get_contents($db.$callsign);
+	$array = (explode(' ',$file));
+	if ($array[0] !== "error"){
+		$fname = $array[0];
+		$lname = $array[1];
+		$type = substr($array[2], 24);
+		$location = $array[3];
+		$exp = $array[6];
+		$expin = ($exp - time()) / 86400;
+	}
+	if ($array[7]){
+		$srcpic = $array[7];
+	}else {
+		$srcpic = '../icons/dtdxa.png';
+	}
+}else if (strlen($callsign) == 6) {
+	include_once '../check.php';
 }
 ?>
 
@@ -32,7 +37,7 @@ if (strlen($array[7]) !== 0){
 		<td colspan="2"><h3><?php echo $callsign." /".$device;?></h3></td>
 		</tr><tr>
 		<td><?php echo $fname." ".$lname;?></td>
-		<td rowspan="4"><img style="max-width:120px;max-height:120px;" src=<?php echo $srcpic;?>></td>
+		<td rowspan="4"><img style="max-width:120px;max-height:120px;" src="<?php echo $srcpic;?>"></td>
 		</tr><tr>
 		<td><?php echo $location;?></td>
 		</tr><tr>

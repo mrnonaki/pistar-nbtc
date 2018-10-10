@@ -9,6 +9,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
+		function reloaddapnet(){
+			$("#dapnet").load("dapnet.php",function(){ setTimeout(reloaddapnet,600000) });
+		}
+		setTimeout(reloaddapnet,600000);
 		function reloadlh(){
 			$("#lh").load("lh.php",function(){ setTimeout(reloadlh,1000) });
 		}
@@ -25,11 +29,12 @@
 	</script>
 </head>
 <body>
-<div id="lh"><?php include 'lh.php'?></div>
 <div class="container text-center">
-<div id="status" class="collapse"><?php include 'status.php'?></div>
-<div id="linkto" class="collapse"><?php include 'linkto.php'?></div>
-<div id="power" class="collapse"><?php include 'power.php'?></div>
+<div id="dapnet"><?php include_once 'dapnet.php'?></div>
+<div id="lh"><?php include_once 'lh.php'?></div>
+<div id="status" class="collapse"><?php include_once 'status.php'?></div>
+<div id="linkto" class="collapse"><?php include_once 'linkto.php'?></div>
+<div id="power" class="collapse"><?php include_once 'power.php'?></div>
 <nav class="navbar fixed-bottom navbar-light bg-faded">
 <a class="navbar-brand mx-auto" href="#">
 <div class="btn-group mt-2 mr-2">
