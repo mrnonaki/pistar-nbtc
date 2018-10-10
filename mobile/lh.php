@@ -23,10 +23,10 @@ if (file_exists($db.$callsign) && (time() - filemtime($db.$callsign)) / 86400 < 
 	}
 	if ($array[7]){
 		$srcpic = $array[7];
-	}else {
+	} else {
 		$srcpic = '../icons/dtdxa.png';
 	}
-}elseif (strlen($callsign) == 6) {
+} elseif (strlen($callsign) == 6) {
 	include_once '../check.php';
 }
 ?>
