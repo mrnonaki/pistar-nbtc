@@ -14,21 +14,22 @@ $power = $_POST['power'];
 if (isset($_POST['power'])) {
 	if ($power == 'reboot' ) {
 		exec ('sleep 5 && sudo shutdown -r now > /dev/null &');
-	} else if ($power == 'poweroff' ) {
+	} elseif ($power == 'poweroff' ) {
 		exec ('sleep 5 && sudo shutdown -h now > /dev/null &');
 	}
 }
 if (isset($_POST['service'])) {
 	if ($service == 'mmdvm') {
 		exec ('sudo service mmdvmhost restart');
-	} else if ($service == 'ircddb') {
+	} elseif ($service == 'ircddb') {
 		exec ('sudo service ircddbgateway restart');
-	} else if ($service == 'dapnet') {
+	} elseif ($service == 'dapnet') {
 		exec ('sudo service dapnetgateway restart');
-	} else if ($service == 'ambe') {
+	} elseif ($service == 'ambe') {
 		exec ('sudo service AMBEserver restart');
 	}
 }
-
-header("Location: index.php",TRUE,301);
+if (isset($_SERVER["HTTP_REFERER"])) {
+	header("Location: {$_SERVER["HTTP_REFERER"]}",TRUE,301);
+}
 ?>

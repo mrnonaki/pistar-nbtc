@@ -1,4 +1,4 @@
-<form class="form-inline" method="post" action="proc.php">
+<form class="form-inline" method="post" action="../proc.php">
 	<div class="btn-group text-center mt-2 mr-2">
 		<button name="service" type="submit" value="mmdvm" class="btn btn-warning">MMDVM</button>
 		<button name="service" type="submit" value="ircddb" class="btn btn-warning">ircDDB</button>

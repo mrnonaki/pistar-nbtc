@@ -26,7 +26,7 @@ if (file_exists($db.$callsign) && (time() - filemtime($db.$callsign)) / 86400 < 
 	}else {
 		$srcpic = '../icons/dtdxa.png';
 	}
-}else if (strlen($callsign) == 6) {
+}elseif (strlen($callsign) == 6) {
 	include_once '../check.php';
 }
 ?>
@@ -64,9 +64,9 @@ if (file_exists($db.$callsign) && (time() - filemtime($db.$callsign)) / 86400 < 
 				echo"<tr><td>$local_time</td>";
 				if (is_numeric($listElem[2]) || $listElem[2] == "DAPNET") {
 					echo "<td>$listElem[2]</td>";
-				} else if (floatval($listElem[7]) <= 1) {
+				} elseif (floatval($listElem[7]) <= 1) {
 					echo "<td style=\"background:#1d1;\">$listElem[2] /$listElem[3]</td>";
-				} else if (floatval($listElem[7]) > 1 && floatval($listElem[7]) <= 3) {
+				} elseif (floatval($listElem[7]) > 1 && floatval($listElem[7]) <= 3) {
 					echo "<td style=\"background:#fa0;\">$listElem[2] /$listElem[3]</td>";
 				} else {
 					echo "<td style=\"background:#f33;\">$listElem[2] /$listElem[3]</td>";

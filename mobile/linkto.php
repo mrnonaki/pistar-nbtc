@@ -36,7 +36,7 @@ if ($configdstarfile = fopen('/etc/dstarrepeater','r')) {
 }
 ?>
 
-<form class="form-inline" method="post" action="proc.php">
+<form class="form-inline" method="post" action="../proc.php">
 	<input type="hidden" name="module" value="<?php echo $configdstar['callsign'];?>"> 
 	<select name="linkto" class="custom-select mt-2 mr-2">
 		<option selected <?php echo "value=\"".$status."\">".$linkDest;?></option>
