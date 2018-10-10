@@ -5,7 +5,7 @@ rpi-rw
 sudo su
 cd /var/www/dashboard
 git clone https://github.com/mrnonaki/pistar-nbtc.git
-chmod 777 /var/www/dashboard/pistar-nbtc/db
+chown www-data:www-data /var/www/dashboard/pistar-nbtc/db
 rpi-ro
 ```
 ### Add REF087, E24DA-DK
