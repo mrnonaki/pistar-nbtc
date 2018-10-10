@@ -12,9 +12,8 @@ if ($dapnetLog = fopen(MMDVMLOGPATH.'/DAPNETGateway-'.date('Y-m-d').'.log','r'))
 			$dt->setTimeZone($local_tz);
 			$local_time = $dt->format('H:i:s');
 			$dapnetMSG	= $linx[2][0];
-			if ( time() - strtotime($local_time) < 600) {
+			if ( time() - strtotime($local_time) < 3600) {
 				echo "<div class=\"alert alert-success alert-dismissible text-left\">";
-				echo "<button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>";
 				echo "<strong>DAPNET</strong> $local_time ... $dapnetMSG";
 				echo "</div>";
 			}

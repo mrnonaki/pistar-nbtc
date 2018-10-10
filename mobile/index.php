@@ -10,9 +10,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		function reloaddapnet(){
-			$("#dapnet").load("dapnet.php",function(){ setTimeout(reloaddapnet,600000) });
+			$("#dapnet").load("dapnet.php",function(){ setTimeout(reloaddapnet,10000) });
 		}
-		setTimeout(reloaddapnet,600000);
+		setTimeout(reloaddapnet,10000);
 		function reloadlh(){
 			$("#lh").load("lh.php",function(){ setTimeout(reloadlh,1000) });
 		}
