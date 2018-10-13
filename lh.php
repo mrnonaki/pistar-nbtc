@@ -24,10 +24,10 @@ if (file_exists($db.$callsign) && (time() - filemtime($db.$callsign)) / 86400 < 
 	if ($array[7]){
 		$srcpic = $array[7];
 	} else {
-		$srcpic = '/icons/dtdxa.png';
+		$srcpic = 'icons/dtdxa.png';
 	}
 } elseif (strlen($callsign) == 6) {
-	include_once '/check.php';
+	include_once 'check.php';
 }
 ?>
 <table style="width:100%;height:150px;">
