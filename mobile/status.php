@@ -37,8 +37,7 @@ if ($WiFiSignal > -50) {
 }
 ?>
 <div class="table-responsive-md">
-	<table class="table table-sm table-borderless text-center">
-		<tr>
+	<table class="table table-sm table-borderless text-center"><tr>
 <?php
 if (isset($lastHeard[0])) {
 	$listElem = $lastHeard[0];

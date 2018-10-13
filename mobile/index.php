@@ -30,26 +30,26 @@
 	</script>
 </head>
 <body>
-<div class="container text-center">
-<div id="dapnet"><?php include_once 'dapnet.php'?></div>
-<div id="lh"><?php include_once 'lh.php'?></div>
-<div id="status" class="collapse"><?php include_once 'status.php'?></div>
-<div id="linkto" class="collapse"><?php include_once 'linkto.php'?></div>
-<div id="power" class="collapse"><?php include_once 'power.php'?></div>
-<nav class="navbar fixed-bottom navbar-light bg-faded">
-<a class="navbar-brand mx-auto" href="#">
-<div class="btn-group mt-2 mr-2">
-<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#status">Status</button>
-<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#linkto">Link to</button>
-<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#power">Power</button>
-</div>
-</a>
-</nav>
-</div>
-<footer class="text-center">
-<div class="text-center">
-Made with ❤ by E24YUJ
-</div>
-</footer>
+	<div class="container text-center">
+		<div id="dapnet"><?php include_once 'dapnet.php'?></div>
+		<div id="lh"><?php include_once 'lh.php'?></div>
+		<div id="status" class="collapse"><?php include_once 'status.php'?></div>
+		<div id="linkto" class="collapse"><?php include_once 'linkto.php'?></div>
+		<div id="power" class="collapse"><?php include_once 'power.php'?></div>
+		<nav class="navbar fixed-bottom navbar-light bg-faded">
+			<a class="navbar-brand mx-auto" href="#">
+				<div class="btn-group mt-2 mr-2">
+					<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#status">Status</button>
+					<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#linkto">Link to</button>
+					<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#power">Power</button>
+				</div>
+			</a>
+		</nav>
+	</div>
+	<footer class="text-center">
+		<div class="text-center">
+			Made with ❤ by E24YUJ
+		</div>
+	</footer>
 </body>
 </html>
