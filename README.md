@@ -3,10 +3,11 @@
 ```sh
 rpi-rw
 sudo su
-cd /var/www/dashboard
-git clone https://github.com/mrnonaki/pistar-nbtc.git
+git clone https://github.com/mrnonaki/pistar-nbtc.git /var/www/dashboard/pistar-nbtc
 chown www-data:www-data /var/www/dashboard/pistar-nbtc/db
+exit
 rpi-ro
+
 ```
 ### Add REF087, E24DA-DK
 ```sh
@@ -24,8 +25,11 @@ echo -e "E24DH\te24dh.dynu.com\tL" >> /root/DPlus_Hosts.txt
 echo -e "E24DI\te24di.dynu.com\tL" >> /root/DPlus_Hosts.txt
 echo -e "E24DJ\te24dj.dynu.com\tL" >> /root/DPlus_Hosts.txt
 echo -e "E24DK\te24dk.dynu.com\tL" >> /root/DPlus_Hosts.txt
+exit
 rpi-ro
 sudo reboot
+
 ```
 ### Access page
-- http://pistar-ip/pistar-nbtc
+- (for HDMI) http://pistar-ip/pistar-nbtc
+- (for Mobile) http://pistar-ip/pistar-nbtc/mobile
