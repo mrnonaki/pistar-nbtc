@@ -26,7 +26,7 @@ if (file_exists($db.$callsign) && (time() - filemtime($db.$callsign)) / 86400 < 
 	} else {
 		$srcpic = '../icons/dtdxa.png';
 	}
-} elseif (strlen($callsign) == 6) {
+} elseif (strlen($callsign) == 6 && $callsign !== "DAPNET") {
 	include_once '../check.php';
 }
 ?>
