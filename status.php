@@ -36,7 +36,7 @@ if ($WiFiSignal > -50) {
 	$WiFiHTML = "<td style=\"background: #f33\">".exec('hostname -I')." | ".$strSignalLevel."</td>\n";
 }
 ?>
-<table style="width:100%">
+<table style="width:750px">
 	<tr>
 <?php
 if (isset($lastHeard[0])) {

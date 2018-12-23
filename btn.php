@@ -38,39 +38,43 @@ if ($configdstarfile = fopen('/etc/dstarrepeater','r')) {
 <form method="post" action="proc.php">
 	<br>
 	<input type="hidden" name="module" value="<?php echo $configdstar['callsign'];?>">
-	<button name="unlink" type="submit" style="width:80px;" value="unlink">UnLink</button>
-	<select name="linkto" style="width:240px;">
-		<option selected <?php echo "value=\"".$status."\">".$linkDest;?></option>
-		<option>====================</option>
-		<option value="REF087 ">Reflector REF087</option>
-		<option value="REF520 ">Reflector REF520</option>
-		<option>====================</option>
-		<option value="E24DA  ">E24DA Bangkok</option>
-		<option value="E24DB  ">E24DB Pathum Thani</option>
-		<option value="E24DC  ">E24DC Chonburi</option>
-		<option value="E24DD  ">E24DD Surin</option>
-		<option value="E24DE  ">E24DE Maha Sarakham</option>
-		<option value="E24DF  ">E24DF Phitsanulok</option>
-		<option value="E24DG  ">E24DG Chiang Mai</option>
-		<option value="E24DH  ">E24DH Ranong</option>
-		<option value="E24DI  ">E24DI Songkhla</option>
-		<option value="E24DJ  ">E24DJ Phuket</option>
-		<option value="E24DK  ">E24DK Surat Thani</option>
-		<option>====================</option>
-    </select>
-	<button name="room" type="submit" style="width:80px;" value="A">A</button>
-	<button name="room" type="submit" style="width:80px;" value="B">B</button>
-	<button name="room" type="submit" style="width:80px;" value="C">C</button>
-	<button name="room" type="submit" style="width:80px;" value="D">D</button>
-	<button name="room" type="submit" style="width:80px;" value="E">E</button>
-	<br><br>
-	Restart Service:
-	<button name="service" type="submit" style="width:80px;" value="mmdvm">MMDVM</button>
-	<button name="service" type="submit" style="width:80px;" value="ircddb">ircDDB</button>
-	<button name="service" type="submit" style="width:80px;" value="dapnet">DAPNET</button>
-	<button name="service" type="submit" style="width:80px;" value="ambe">AMBE</button>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	Hotspot Power:
-	<button name="power" type="submit" style="width:80px;" value="reboot">Reboot</button>
-	<button name="power" type="submit" style="width:80px;" value="poweroff">Shutdown</button>
+	<table>
+		<tr>
+			<td><button name="unlink" type="submit" style="width:80px;" value="unlink">UnLink</button></td>
+			<td colspan="3"><select name="linkto" style="width:240px;">
+				<option selected <?php echo "value=\"".$status."\">".$linkDest;?></option>
+				<option>====================</option>
+				<option value="REF087 ">Reflector REF087</option>
+				<option value="REF520 ">Reflector REF520</option>
+				<option>====================</option>
+				<option value="E24DA  ">E24DA Bangkok</option>
+				<option value="E24DB  ">E24DB Pathum Thani</option>
+				<option value="E24DC  ">E24DC Chonburi</option>
+				<option value="E24DD  ">E24DD Surin</option>
+				<option value="E24DE  ">E24DE Maha Sarakham</option>
+				<option value="E24DF  ">E24DF Phitsanulok</option>
+				<option value="E24DG  ">E24DG Chiang Mai</option>
+				<option value="E24DH  ">E24DH Ranong</option>
+				<option value="E24DI  ">E24DI Songkhla</option>
+				<option value="E24DJ  ">E24DJ Phuket</option>
+				<option value="E24DK  ">E24DK Surat Thani</option>
+				<option>====================</option>
+    			</select></td>
+			<td><button name="room" type="submit" style="width:80px;" value="A">A</button></td>
+			<td><button name="room" type="submit" style="width:80px;" value="B">B</button></td>
+			<td><button name="room" type="submit" style="width:80px;" value="C">C</button></td>
+			<td><button name="room" type="submit" style="width:80px;" value="D">D</button></td>
+			<td><button name="room" type="submit" style="width:80px;" value="E">E</button></td>
+		</tr><tr>
+			<td>Restart:</td>
+			<td><button name="service" type="submit" style="width:80px;" value="mmdvm">MMDVM</button></td>
+			<td><button name="service" type="submit" style="width:80px;" value="ircddb">ircDDB</button></td>
+			<td><button name="service" type="submit" style="width:80px;" value="dapnet">DAPNET</button></td>
+			<td><button name="service" type="submit" style="width:80px;" value="ambe">AMBE</button></td>
+			<td></td>
+			<td>Hotspot:</td>
+			<td><button name="power" type="submit" style="width:80px;" value="reboot">Reboot</button></td>
+			<td><button name="power" type="submit" style="width:80px;" value="poweroff">Shutdown</button></td>
+		</tr>
+	</table>
 </form>

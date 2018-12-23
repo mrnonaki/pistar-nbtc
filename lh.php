@@ -30,7 +30,7 @@ if (file_exists($db.$callsign) && (time() - filemtime($db.$callsign)) / 86400 < 
 	include_once 'check.php';
 }
 ?>
-<table style="width:100%;height:150px;">
+<table style="width:750px;height:150px;">
 	<tr>
 		<td><h1><?php echo $callsign." /".$device;?></h1></td>
 		<td rowspan="5"><img style="max-width:150px;max-height:150px;" src="<?php echo $srcpic;?>"></td>
@@ -46,7 +46,7 @@ if (file_exists($db.$callsign) && (time() - filemtime($db.$callsign)) / 86400 < 
 </table>
 	
 <?php
-echo "<table style=\"width:100%\"><tr>\n<td><table>\n";
+echo "<table style=\"width:750px\"><tr>\n<td><table>\n";
 for ($i = 0;  ($i < 9); $i++) {
 	if (isset($lastHeard[$i])) {
 		$listElem = $lastHeard[$i];

@@ -1,7 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 date_default_timezone_set('UTC');
-echo "<table><tr><td>DAPNET message: </td>";
+echo "<table><tr><td>DAPNET: </td>";
 if ($dapnetLog = fopen(MMDVMLOGPATH.'/DAPNETGateway-'.date('Y-m-d').'.log','r')) {
 	date_default_timezone_set('Asia/Bangkok');
 	while ($dapnetLine = fgets($dapnetLog)) {
@@ -13,7 +13,7 @@ if ($dapnetLog = fopen(MMDVMLOGPATH.'/DAPNETGateway-'.date('Y-m-d').'.log','r'))
 			$dt->setTimeZone($local_tz);
 			$local_time = $dt->format('H:i:s');
 			$dapnetMSG	= $linx[2][0];
-			if ( time() - strtotime($local_time) < 3600) {
+			if ( time() - strtotime($local_time) < 600) {
 				echo "<td>($local_time) ... <b>$dapnetMSG</b></td>";
 			}
 		}
