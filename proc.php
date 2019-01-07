@@ -10,6 +10,17 @@ if (isset($_GET['ambeserver'])) {
 	}
 }
 
+if (isset($_GET['ambeserver1'])) {
+	$ambeserver1 = $_GET['ambeserver1'];
+	if ($ambeserver1 == 'start') {
+		exec ('sudo service AMBEserver1 start');
+	} elseif ($ambeserver1 == 'stop') {
+		exec ('sudo service AMBEserver1 stop');
+	} elseif ($ambeserver1 == 'restart') {
+		exec ('sudo service AMBEserver1 restart');
+	}
+}
+
 if (isset($_POST['room'])) {
 	$module = $_POST['module'];
 	$linkto = $_POST['linkto'];
