@@ -44,6 +44,7 @@ if ($configdstarfile = fopen('/etc/dstarrepeater','r')) {
 			<td colspan="3"><select name="linkto" style="width:240px;">
 				<option selected <?php echo "value=\"".$status."\">".$linkDest;?></option>
 				<option>====================</option>
+				<option value="REF001 ">Reflector REF001</option>
 				<option value="REF087 ">Reflector REF087</option>
 				<option value="REF520 ">Reflector REF520</option>
 				<option>====================</option>
